@@ -22,3 +22,8 @@ The simulator dynamically selects which scheduling algorithm to use based on the
   - CPU **timeline** (execution order)
   - Process details table (AT, BT, CT, TAT, WT)
 - Handles **CPU idle time** when no process is ready
+- Automatically calculates quantum time by taking avarage BT
+	`$avg_bt = sum(p["BT"] for p in process) // len(process)
+    	 $quantum = max(2, min(10, avg_bt))` 
+
+
